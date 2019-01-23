@@ -15,6 +15,7 @@ class Tweet extends React.Component {
     if (height < this.state.height || !tweetId) return
     savedHeight[tweetId] = height
     height && this.setState({height})
+    this.props.onHeightChange && this.props.onHeightChange(height);
   }
 
   render () {
@@ -26,7 +27,8 @@ class Tweet extends React.Component {
 Tweet.propTypes = {
   ...ViewPropTypes,
   tweetId: PropTypes.string,
-  onSizeChange: PropTypes.func
+  onSizeChange: PropTypes.func,
+  onHeightChange: PropTypes.func
 }
 
 const RNTweetView = requireNativeComponent('RNTweetView', Tweet)
