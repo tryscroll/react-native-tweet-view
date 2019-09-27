@@ -6,7 +6,6 @@ package se.bonniernews.rntweet;
 
 import android.content.Context;
 import android.location.Location;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.graphics.Paint;
@@ -29,7 +28,6 @@ import com.facebook.react.uimanager.events.RCTEventEmitter;
 import com.facebook.react.views.view.ReactViewGroup;
 
 import android.widget.RelativeLayout;
-import android.support.annotation.NonNull;
 import android.view.ViewGroup;
 import android.util.DisplayMetrics;
 
@@ -139,13 +137,11 @@ class RNTweetViewManager extends SimpleViewManager<RNTweetView> {
         view.setTweetId(parsedTweetId);
     }
 
-    @NonNull
     public static RNTweetView createTweetView(ThemedReactContext context) {
         return new RNTweetView(context);
     }
 
     @Override
-    @Nullable
     public Map<String, Object> getExportedCustomDirectEventTypeConstants() {
         MapBuilder.Builder<String, Object> builder = MapBuilder.builder();
         return builder
